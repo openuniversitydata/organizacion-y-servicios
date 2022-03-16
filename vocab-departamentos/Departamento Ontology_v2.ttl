@@ -1,0 +1,118 @@
+ @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+@prefix geo: <http://www.owl-ontologies.com/geo#> .
+@prefix geosparql: <http://www.owl-ontologies.com/geosparql#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix univDepart: <http://vocab.universidadesabiertas.es/ontology/organizacion-y-servicios#Departamento> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dct:identifier a owl:DatatypeProperty ;
+    rdfs:label "identifier" ;
+    rdfs:domain univDepart:Universidad ;
+    rdfs:range xsd:string .
+
+esadm:municipio a owl:ObjectProperty ;
+    rdfs:label "municipio" ;
+    rdfs:domain univDepart:Campus,
+        univDepart:Departamento ;
+    rdfs:range esadm:Municipio .
+
+univDepart: a owl:Ontology ;
+    dc:creator "Víctor Morcuende" ;
+    dc:description "Ontology code created by Chowlk" ;
+    dc:title "Template Ontology" ;
+    owl:versionInfo "0.0.2" .
+
+univDepart:estaAsociadoA a owl:ObjectProperty ;
+    rdfs:label "esta asociado a" ;
+    rdfs:domain univDepart:CursoAcademico .
+
+univDepart:fechaDesdeSituacionDepartamento a owl:DatatypeProperty ;
+    rdfs:label "fecha desde situacion departamento" ;
+    rdfs:domain univDepart:Departamento ;
+    rdfs:range xsd:date .
+
+univDepart:situacionDepartamento a owl:ObjectProperty ;
+    rdfs:label "situacion departamento" ;
+    rdfs:domain univDepart:Departamento .
+
+geo:lat a owl:DatatypeProperty ;
+    rdfs:label "lat" ;
+    rdfs:domain geosparql:Point ;
+    rdfs:range xsd:double .
+
+geo:long a owl:DatatypeProperty ;
+    rdfs:label "long" ;
+    rdfs:domain geosparql:Point ;
+    rdfs:range xsd:double .
+
+geosparql:asWKT a owl:DatatypeProperty ;
+    rdfs:label "as w k t" ;
+    rdfs:domain geosparql:Geometry ;
+    rdfs:range xsd:wKTLiteral .
+
+geosparql:hasGeometry a owl:ObjectProperty ;
+    rdfs:label "has geometry" ;
+    rdfs:domain geosparql:Geometry ;
+    rdfs:range geosparql:Feature .
+
+org:hasSite a owl:ObjectProperty ;
+    rdfs:label "has site" ;
+    rdfs:domain org:Organization ;
+    rdfs:range org:Site .
+
+org:hasSubOrganization a owl:ObjectProperty ;
+    rdfs:label "has sub organization" ;
+    rdfs:domain univDepart:Universidad ;
+    rdfs:range univDepart:Departamento .
+
+esadm:Municipio a owl:Class ;
+    rdfs:label "Municipio" .
+
+univDepart:CursoAcademico a owl:Class ;
+    rdfs:label "Curso Academico" .
+
+univDepart:estaUbicado a owl:ObjectProperty ;
+    rdfs:label "esta ubicado" ;
+    rdfs:domain univDepart:Departamento ;
+    rdfs:range univDepart:Campus .
+
+org:Site a owl:Class ;
+    rdfs:label "Site" ;
+    rdfs:subClassOf geosparql:Feature .
+
+univDepart:Campus a owl:Class ;
+    rdfs:label "Campus" .
+
+univDepart:Universidad a owl:Class ;
+    rdfs:label "Universidad" ;
+    rdfs:subClassOf org:Organization .
+
+geosparql:Feature a owl:Class ;
+    rdfs:label "Feature" ;
+    rdfs:subClassOf geosparql:SpatialObject .
+
+geosparql:Point a owl:Class ;
+    rdfs:label "Point" ;
+    rdfs:subClassOf geosparql:Geometry .
+
+geosparql:SpatialObject a owl:Class ;
+    rdfs:label "Spatial Object" .
+
+geosparql:Geometry a owl:Class ;
+    rdfs:label "Geometry" ;
+    rdfs:subClassOf geosparql:SpatialObject .
+
+org:Organization a owl:Class ;
+    rdfs:label "Organization" .
+
+univDepart:Departamento a owl:Class ;
+    rdfs:label "Departamento" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty univDepart:estaUbicado ],
+        org:Organization .
+
