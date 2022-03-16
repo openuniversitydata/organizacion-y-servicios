@@ -1,0 +1,88 @@
+ @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix univDepart: <http://vocab.universidadesabiertas.es/ontology/organizacion-y-servicios#Departamento> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+univDepart: a owl:Ontology ;
+    dc:creator "Víctor Morcuende" ;
+    dc:description "Ontology code created by Chowlk" ;
+    dc:title "Template Ontology" ;
+    owl:versionInfo "0.0.1" .
+
+univDepart:cod_campus a owl:DatatypeProperty ;
+    rdfs:label "cod_campus" ;
+    rdfs:domain univDepart:campus ;
+    rdfs:range xsd:string .
+
+univDepart:cod_departamento a owl:DatatypeProperty ;
+    rdfs:label "cod_departamento" ;
+    rdfs:domain univDepart:departamento ;
+    rdfs:range xsd:string .
+
+univDepart:cod_municipio a owl:DatatypeProperty ;
+    rdfs:label "cod_municipio" ;
+    rdfs:domain univDepart:municipio ;
+    rdfs:range xsd:string .
+
+univDepart:cod_situacion_departamento a owl:DatatypeProperty ;
+    rdfs:label "cod_situacion_departamento" ;
+    rdfs:domain univDepart:departamento ;
+    rdfs:range xsd:integer .
+
+univDepart:cod_universidad a owl:DatatypeProperty ;
+    rdfs:label "cod_universidad" ;
+    rdfs:domain univDepart:universidad ;
+    rdfs:range xsd:string .
+
+univDepart:fecha_desde_situacion_departamento a owl:DatatypeProperty ;
+    rdfs:label "fecha_desde_situacion_departamento" ;
+    rdfs:domain univDepart:departamento ;
+    rdfs:range xsd:date .
+
+univDepart:situacion_departamento a owl:DatatypeProperty ;
+    rdfs:label "situacion_departamento" ;
+    rdfs:domain univDepart:departamento ;
+    rdfs:range xsd:string .
+
+univDepart:curso_academico a owl:Class ;
+    rdfs:label "curso_academico" .
+
+univDepart:estaAsociadoA a owl:ObjectProperty ;
+    rdfs:label "esta asociado a" ;
+    rdfs:domain univDepart:campus,
+        univDepart:curso_academico ;
+    rdfs:range univDepart:municipio,
+        univDepart:universidad .
+
+univDepart:estaUbicado a owl:ObjectProperty ;
+    rdfs:label "esta ubicado" ;
+    rdfs:domain univDepart:departamento ;
+    rdfs:range univDepart:municipio .
+
+univDepart:posee a owl:ObjectProperty ;
+    rdfs:label "posee" ;
+    rdfs:domain univDepart:universidad ;
+    rdfs:range univDepart:departamento .
+
+univDepart:campus a owl:Class ;
+    rdfs:label "campus" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty univDepart:estaAsociadoA ] .
+
+univDepart:municipio a owl:Class ;
+    rdfs:label "municipio" .
+
+univDepart:universidad a owl:Class ;
+    rdfs:label "universidad" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty univDepart:posee ] .
+
+univDepart:departamento a owl:Class ;
+    rdfs:label "departamento" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty univDepart:estaUbicado ] .
+
