@@ -1,0 +1,29 @@
+ @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+@prefix geo: <http://www.owl-ontologies.com/geo#> .
+@prefix geosparql: <http://www.owl-ontologies.com/geosparql#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix univDepart: <http://vocab.universidadesabiertas.es/ontology/organizacion-y-servicios#Departamento> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+univDepart:Departamento_de_Inteligencia_Artificial a univDepart:Departamento ;
+    dct:identifier "UPM-1005" ;
+    univDepart:fechaDesdeSituacionDepartamento "20150701"^^xsd:date ;
+    univDepart:situacionDepartamento <http://vocab.universidadesabiertas.es/kos/organizacion-y-servicios/departamento/situacion-departamento/activo> ;
+    esadm:municipio esadm:Boadilla_del_Monte ;
+    univDepart:estaUbicado "Campus de Montegancedo" ;
+    org:hasSite univDepart:ETSIINF ;
+    org:subOrganizationOf univDepart:UPM .
+    
+univDepart:UPM org:hasSubOrganization univDepart:Departamento_de_Inteligencia_Artificial ;
+    univDepart:tieneAsociado "2021-22"^^xsd:string .
+
+univDepart:ETSIINF geosparql:hasGeometry univDepart:ETSIINF_geometry .
+
+univDepart:ETSIINF_geometry a geosparql:Point ;
+    geo:long "-3.83561"^^xsd:double ;
+    geo:lat "40.40575"^^xsd:double ;
+    geosparql:asWKT "POINT (-3.83561,40.40575)"^^geosparql:wktLiteral .
