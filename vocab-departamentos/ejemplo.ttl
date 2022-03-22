@@ -10,18 +10,27 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 univDepart:Departamento_de_Inteligencia_Artificial a univDepart:Departamento ;
-    dct:identifier "UPM-1005" ;
-    univDepart:fechaDesdeSituacionDepartamento "20150701"^^xsd:date ;
-    univDepart:situacionDepartamento <http://vocab.universidadesabiertas.es/kos/organizacion-y-servicios/departamento/situacion-departamento/activo> ;
-    esadm:municipio esadm:Boadilla_del_Monte ;
-    univDepart:estaUbicado "Campus de Montegancedo" ;
+    dct:identifier "UPM-1002" ;
+    univDepart:fechaDesdeSituacionDepartamento "20100701"^^xsd:date ;
+    univDepart:situacionDepartamento <http://vocab.universidadesabiertas.es/kos/situacion-departamento/activo> ;
+    esadm:municipio esadm:Municipio ;
+    univCentro:estaUbicado univCentro:Campus ;
     org:hasSite univDepart:ETSIINF ;
     org:subOrganizationOf univDepart:UPM .
     
 univDepart:UPM org:hasSubOrganization univDepart:Departamento_de_Inteligencia_Artificial ;
+    dct:identifier "025" ;
     univDepart:tieneAsociado "2021-22"^^xsd:string .
 
-univDepart:ETSIINF geosparql:hasGeometry univDepart:ETSIINF_geometry .
+esadm:Boadilla_del_Monte a esadm:Municipio ;
+    dct:identifier "022" .
+
+univCentro:Campus_de_Montegancedo a univCentro:Campus;
+    dct:identifier "02214" ;
+    esadm:municipio esadm:Boadilla_del_Monte .
+
+univDepart:ETSIINF dct:identifier "28027114" ;
+    geosparql:hasGeometry univDepart:ETSIINF_geometry .
 
 univDepart:ETSIINF_geometry a geosparql:Point ;
     geo:long "-3.83561"^^xsd:double ;
