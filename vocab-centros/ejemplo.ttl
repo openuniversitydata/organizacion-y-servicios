@@ -10,18 +10,26 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 univCentro:ETSIINF a univCentro:Centro ;
-    dct:identifier "UPM-10" ;
-    univCentro:fechaDesdeSituacionCentro "20140701"^^xsd:date ;
-    univCentro:tipoCentro <http://vocab.universidadesabiertas.es/kos/organizacion-y-servicios/centro/tipo-centro/centroPropio> ;
-    univCentro:naturalezaCentro <http://vocab.universidadesabiertas.es/kos/organizacion-y-servicios/centro/naturaleza-centro/publico> ;
-    univCentro:situacionCentro <http://vocab.universidadesabiertas.es/kos/organizacion-y-servicios/centro/situacion-centro/activo> ;
-    esadm:municipio esadm:Boadilla_del_Monte ;
-    univCentro:estaUbicado "Campus de Montegancedo" ;
+    dct:identifier "28027114" ;
+    univCentro:fechaDesdeSituacionCentro "19760701"^^xsd:date ;
+    univCentro:tipoCentro <http://vocab.universidadesabiertas.es/kos/tipo-centro/centroPropio> ;
+    univCentro:naturalezaCentro <http://vocab.universidadesabiertas.es/kos/naturaleza-centro/publico> ;
+    univCentro:situacionCentro <http://vocab.universidadesabiertas.es/kos/situacion-centro/activo> ;
+    esadm:municipio esadm:Municipio ;
+    univCentro:estaUbicado univCentro:Campus ;
     org:hasSite univCentro:ETSIINF_location ;
     org:subOrganizationOf univCentro:UPM .
     
 univCentro:UPM org:hasSubOrganization univCentro:ETSIINF ;
+    dct:identifier "025" ;
     univCentro:tieneAsociado "2021-22"^^xsd:string .
+
+esadm:Boadilla_del_Monte a esadm:Municipio ;
+    dct:identifier "022" .
+
+univCentro:Campus_de_Montegancedo a univCentro:Campus;
+    dct:identifier "02214" ;
+    esadm:municipio esadm:Boadilla_del_Monte .
 
 univCentro:ETSIINF_location geosparql:hasGeometry univCentro:ETSIINF_geometry .
 
