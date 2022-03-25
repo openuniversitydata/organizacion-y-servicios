@@ -15,14 +15,19 @@ univCentro:ETSIINF a univCentro:Centro ;
     univCentro:tipoCentro <http://vocab.universidadesabiertas.es/kos/tipo-centro/centroPropio> ;
     univCentro:naturalezaCentro <http://vocab.universidadesabiertas.es/kos/naturaleza-centro/publico> ;
     univCentro:situacionCentro <http://vocab.universidadesabiertas.es/kos/situacion-centro/activo> ;
-    esadm:municipio esadm:Municipio ;
-    univCentro:estaUbicado univCentro:Campus ;
+    esadm:municipio esadm:Boadilla_del_Monte ;
+    univCentro:estaUbicado univCentro:Campus_de_Montegancedo ;
     org:hasSite univCentro:ETSIINF_location ;
-    org:subOrganizationOf univCentro:UPM .
+    org:subOrganizationOf univCentro:UPM ;
+    rdfs:subClassOf org:Organization .
     
-univCentro:UPM org:hasSubOrganization univCentro:ETSIINF ;
+univCentro:UPM a univCentro:Universidad ;
     dct:identifier "025" ;
-    univCentro:tieneAsociado "2021-22"^^xsd:string .
+    univCentro:tieneAsociado univCentro:2021_22 ;
+    org:hasSubOrganization univCentro:ETSIINF ;
+    rdfs:subClassOf org:Organization .
+
+univCentro:2021_22 a univCentro:CursoAcademico .
 
 esadm:Boadilla_del_Monte a esadm:Municipio ;
     dct:identifier "022" .
@@ -37,3 +42,4 @@ univCentro:ETSIINF_geometry a geosparql:Point ;
     geo:long "-3.83561"^^xsd:double ;
     geo:lat "40.40575"^^xsd:double ;
     geosparql:asWKT "POINT (-3.83561,40.40575)"^^geosparql:wktLiteral .
+    
