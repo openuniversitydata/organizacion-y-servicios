@@ -4,41 +4,42 @@
 @prefix geo: <http://www.owl-ontologies.com/geo#> .
 @prefix geosparql: <http://www.owl-ontologies.com/geosparql#> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix orgser: <http://openuniversitydata/def/organizacion-y-servicios#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix univDepart: <http://vocab.universidadesabiertas.es/ontology/organizacion-y-servicios#Departamento> .
+@prefix univ: <http://openuniversitydata/def#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-univDepart:Departamento_de_Inteligencia_Artificial a univDepart:Departamento ;
+<http://openuniversitydata/recurso/Departamento_de_Inteligencia_Artificial> a orgser:Departamento ;
     dct:identifier "UPM-1002" ;
-    univDepart:fechaDesdeSituacionDepartamento "20100701"^^xsd:date ;
-    univDepart:situacionDepartamento <http://vocab.universidadesabiertas.es/kos/situacion-departamento/activo> ;
-    esadm:municipio esadm:Boadilla_del_Monte ;
-    univDepart:estaUbicado univDepart:Campus_de_Montegancedo ;
-    org:hasSite univDepart:ETSIINF ;
-    org:subOrganizationOf univDepart:UPM ;
+    orgser:fechaDesdeSituacionDepartamento "20100701"^^xsd:date ;
+    orgser:situacionDepartamento <http://openuniversitydata/kos/organizacion-y-servicios/situacion-departamento/activo> ;
+    esadm:municipio <http://openuniversitydata/recurso/Boadilla_del_Monte> ;
+    orgser:estaUbicado <http://openuniversitydata/recurso/Campus_de_Montegancedo> ;
+    org:hasSite <http://openuniversitydata/recurso/ETSIINF> ;
+    org:subOrganizationOf <http://openuniversitydata/recurso/UPM> ;
     rdfs:subClassOf org:Organization .
     
-univDepart:UPM a univDepart:Universidad ;
+<http://openuniversitydata/recurso/UPM> a univ:Universidad ;
     dct:identifier "025" ;
-    univDepart:tieneAsociado univDepart:2021_22 ;
-    org:hasSubOrganization univDepart:Departamento_de_Inteligencia_Artificial ;
+    univ:tieneAsociado <http://openuniversitydata/recurso/2021_22> ;
+    org:hasSubOrganization <http://openuniversitydata/recurso/Departamento_de_Inteligencia_Artificial> ;
     rdfs:subClassOf org:Organization .
     
-univDepart:2021_22 a univDepart:CursoAcademico .
+<http://openuniversitydata/recurso/2021_22> a univ:CursoAcademico .
 
-esadm:Boadilla_del_Monte a esadm:Municipio ;
+<http://openuniversitydata/recurso/Boadilla_del_Monte> a esadm:Municipio ;
     dct:identifier "022" .
 
-univDepart:Campus_de_Montegancedo a univDepart:Campus;
+<http://openuniversitydata/recurso/Campus_de_Montegancedo> a orgser:Campus;
     dct:identifier "02214" ;
-    esadm:municipio esadm:Boadilla_del_Monte .
+    esadm:municipio <http://openuniversitydata/recurso/Boadilla_del_Monte> .
 
-univDepart:ETSIINF a univDepart:Centro ;
+<http://openuniversitydata/recurso/ETSIINF> a orgser:Centro ;
     dct:identifier "28027114" ;
-    geosparql:hasGeometry univDepart:ETSIINF_geometry .
+    geosparql:hasGeometry univ:ETSIINF_geometry .
 
-univDepart:ETSIINF_geometry a geosparql:Point ;
+univ:ETSIINF_geometry a geosparql:Point ;
     geo:long "-3.83561"^^xsd:double ;
     geo:lat "40.40575"^^xsd:double ;
     geosparql:asWKT "POINT (-3.83561,40.40575)"^^geosparql:wktLiteral .
