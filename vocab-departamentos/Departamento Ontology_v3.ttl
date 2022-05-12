@@ -4,40 +4,50 @@
 @prefix geo: <http://www.owl-ontologies.com/geo#> .
 @prefix geosparql: <http://www.owl-ontologies.com/geosparql#> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix orgser: <http://openuniversitydata/def/organizacion-y-servicios#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix univDepart: <http://vocab.universidadesabiertas.es/ontology/organizacion-y-servicios#Departamento> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix univ: <http://openuniversitydata/def#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+univ: a owl:Ontology ;
+    dc:creator "Víctor Morcuende" ;
+    dc:description "Ontology code created by Chowlk" ;
+    dc:title "Departamento Ontology" ;
+    owl:versionInfo "0.0.3" .
+
+univ:tieneAsociado a owl:ObjectProperty ;
+    rdfs:label "tiene asociado" ;
+    rdfs:domain univ:Universidad ;
+    rdfs:range univ:CursoAcademico .
+
+orgser:fechaDesdeSituacionDepartamento a owl:DatatypeProperty ;
+    rdfs:label "fecha desde situacion departamento" ;
+    rdfs:domain orgser:Departamento ;
+    rdfs:range xsd:date .
+
+orgser:situacionDepartamento a owl:ObjectProperty ;
+    rdfs:label "situacion departamento" ;
+    rdfs:domain orgser:Departamento ;
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            _:genid3
+        )
+    ] .
 
 dct:identifier a owl:DatatypeProperty ;
     rdfs:label "identifier" ;
-    rdfs:domain univDepart:Universidad ;
+    rdfs:domain univ:Universidad ;
     rdfs:range xsd:string .
 
 esadm:municipio a owl:ObjectProperty ;
     rdfs:label "municipio" ;
-    rdfs:domain univDepart:Campus,
-        univDepart:Departamento ;
+    rdfs:domain orgser:Campus,
+        orgser:Departamento ;
     rdfs:range esadm:Municipio .
-
-univDepart: a owl:Ontology ;
-    dc:creator "Víctor Morcuende" ;
-    dc:description "Ontology code created by Chowlk" ;
-    dc:title "Template Ontology" ;
-    owl:versionInfo "0.0.2" .
-
-univDepart:estaAsociadoA a owl:ObjectProperty ;
-    rdfs:label "esta asociado a" ;
-    rdfs:domain univDepart:CursoAcademico .
-
-univDepart:fechaDesdeSituacionDepartamento a owl:DatatypeProperty ;
-    rdfs:label "fecha desde situacion departamento" ;
-    rdfs:domain univDepart:Departamento ;
-    rdfs:range xsd:date .
-
-univDepart:situacionDepartamento a owl:ObjectProperty ;
-    rdfs:label "situacion departamento" ;
-    rdfs:domain univDepart:Departamento .
 
 geo:lat a owl:DatatypeProperty ;
     rdfs:label "lat" ;
@@ -66,30 +76,31 @@ org:hasSite a owl:ObjectProperty ;
 
 org:hasSubOrganization a owl:ObjectProperty ;
     rdfs:label "has sub organization" ;
-    rdfs:domain univDepart:Universidad ;
-    rdfs:range univDepart:Departamento .
+    rdfs:domain univ:Universidad ;
+    rdfs:range orgser:Departamento .
+
+org:subOrganizationOf a owl:ObjectProperty ;
+    rdfs:label "sub organization of" ;
+    rdfs:domain orgser:Departamento ;
+    rdfs:range univ:Universidad .
+
+univ:CursoAcademico a owl:Class ;
+    rdfs:label "Curso Academico" .
+
+orgser:estaUbicado a owl:ObjectProperty ;
+    rdfs:label "esta ubicado" ;
+    rdfs:domain orgser:Departamento ;
+    rdfs:range orgser:Campus .
 
 esadm:Municipio a owl:Class ;
     rdfs:label "Municipio" .
-
-univDepart:CursoAcademico a owl:Class ;
-    rdfs:label "Curso Academico" .
-
-univDepart:estaUbicado a owl:ObjectProperty ;
-    rdfs:label "esta ubicado" ;
-    rdfs:domain univDepart:Departamento ;
-    rdfs:range univDepart:Campus .
 
 org:Site a owl:Class ;
     rdfs:label "Site" ;
     rdfs:subClassOf geosparql:Feature .
 
-univDepart:Campus a owl:Class ;
+orgser:Campus a owl:Class ;
     rdfs:label "Campus" .
-
-univDepart:Universidad a owl:Class ;
-    rdfs:label "Universidad" ;
-    rdfs:subClassOf org:Organization .
 
 geosparql:Feature a owl:Class ;
     rdfs:label "Feature" ;
@@ -109,10 +120,18 @@ geosparql:Geometry a owl:Class ;
 org:Organization a owl:Class ;
     rdfs:label "Organization" .
 
-univDepart:Departamento a owl:Class ;
+univ:Universidad a owl:Class ;
+    rdfs:label "Universidad" ;
+    rdfs:subClassOf org:Organization .
+
+orgser:Departamento a owl:Class ;
     rdfs:label "Departamento" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty univDepart:estaUbicado ],
+            owl:onProperty orgser:estaUbicado ],
         org:Organization .
 
+_:genid3
+    a owl:Restriction ;
+    owl:onProperty skos:inScheme ;
+    owl:hasValue <http://openuniversitydata/kos/organizacion-y-servicios/situacion-departamento> .
