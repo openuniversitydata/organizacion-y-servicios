@@ -4,41 +4,42 @@
 @prefix geo: <http://www.owl-ontologies.com/geo#> .
 @prefix geosparql: <http://www.owl-ontologies.com/geosparql#> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix orgser: <http://openuniversitydata/def/organizacion-y-servicios#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix univCentro: <http://vocab.universidadesabiertas.es/ontology/organizacion-y-servicios#Centro> .
+@prefix univ: <http://openuniversitydata/def#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-univCentro:ETSIINF a univCentro:Centro ;
+<http://openuniversitydata/recurso/ETSIINF> a orgser:Centro ;
     dct:identifier "28027114" ;
-    univCentro:fechaDesdeSituacionCentro "19760701"^^xsd:date ;
-    univCentro:tipoCentro <http://vocab.universidadesabiertas.es/kos/tipo-centro/centroPropio> ;
-    univCentro:naturalezaCentro <http://vocab.universidadesabiertas.es/kos/naturaleza-centro/publico> ;
-    univCentro:situacionCentro <http://vocab.universidadesabiertas.es/kos/situacion-centro/activo> ;
-    esadm:municipio esadm:Boadilla_del_Monte ;
-    univCentro:estaUbicado univCentro:Campus_de_Montegancedo ;
-    org:hasSite univCentro:ETSIINF_location ;
-    org:subOrganizationOf univCentro:UPM ;
+    orgser:fechaDesdeSituacionCentro "19760701"^^xsd:date ;
+    orgser:tipoCentro <http://openuniversitydata/kos/organizacion-y-servicios/tipo-centro/centroPropio> ;
+    orgser:naturalezaCentro <http://openuniversitydata/kos/organizacion-y-servicios/naturaleza-centro/publico> ;
+    orgser:situacionCentro <http://openuniversitydata/kos/organizacion-y-servicios/situacion-centro/activo> ;
+    esadm:municipio <http://openuniversitydata/recurso/Boadilla_del_Monte> ;
+    orgser:estaUbicado <http://openuniversitydata/recurso/Campus_de_Montegancedo> ;
+    org:hasSite univ:ETSIINF_location ;
+    org:subOrganizationOf <http://openuniversitydata/recurso/UPM> ;
     rdfs:subClassOf org:Organization .
     
-univCentro:UPM a univCentro:Universidad ;
+<http://openuniversitydata/recurso/UPM> a univ:Universidad ;
     dct:identifier "025" ;
-    univCentro:tieneAsociado univCentro:2021_22 ;
-    org:hasSubOrganization univCentro:ETSIINF ;
+    univ:tieneAsociado <http://openuniversitydata/recurso/2021_22> ;
+    org:hasSubOrganization <http://openuniversitydata/recurso/ETSIINF> ;
     rdfs:subClassOf org:Organization .
 
-univCentro:2021_22 a univCentro:CursoAcademico .
+<http://openuniversitydata/recurso/2021_22> a univ:CursoAcademico .
 
-esadm:Boadilla_del_Monte a esadm:Municipio ;
+<http://openuniversitydata/recurso/Boadilla_del_Monte> a esadm:Municipio ;
     dct:identifier "022" .
 
-univCentro:Campus_de_Montegancedo a univCentro:Campus;
+<http://openuniversitydata/recurso/Campus_de_Montegancedo> a orgser:Campus;
     dct:identifier "02214" ;
-    esadm:municipio esadm:Boadilla_del_Monte .
+    esadm:municipio <http://openuniversitydata/recurso/Boadilla_del_Monte> .
 
-univCentro:ETSIINF_location geosparql:hasGeometry univCentro:ETSIINF_geometry .
+univ:ETSIINF_location geosparql:hasGeometry univ:ETSIINF_geometry .
 
-univCentro:ETSIINF_geometry a geosparql:Point ;
+univ:ETSIINF_geometry a geosparql:Point ;
     geo:long "-3.83561"^^xsd:double ;
     geo:lat "40.40575"^^xsd:double ;
     geosparql:asWKT "POINT (-3.83561,40.40575)"^^geosparql:wktLiteral .
