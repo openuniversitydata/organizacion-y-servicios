@@ -1,0 +1,318 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix map: <http://mapping.example.com/> .
+@prefix ma: <http://www.w3.org/ns/ma-ont#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix v: <http://rdf.data-vocabulary.org/#> .
+@prefix schema: <http://schema.org/> .
+@prefix univ: <http://openuniversitydata/def#> .
+@prefix orgser: <http://openuniversitydata/def/organizacion-y-servicios#> .
+@prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+@prefix geosparql: <http://www.owl-ontologies.com/geosparql#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.owl-ontologies.com/geo#> .
+
+map:jc_000 rr:child "curso_academico" ;
+	rr:parent "curso_academico" .
+
+map:jc_001 rr:child "des_departamento" ;
+	rr:parent "des_departamento" .
+
+map:jc_002 rr:child "des_municipio" ;
+	rr:parent "des_municipio" .
+
+map:jc_003 rr:child "des_universidad" ;
+	rr:parent "des_universidad" .
+
+map:jc_004 rr:child "des_campus" ;
+	rr:parent "des_campus" .
+
+map:jc_005 rr:child "des_municipio" ;
+	rr:parent "des_municipio" .
+
+map:map_triplesMapCampus_000 rml:logicalSource map:source_003 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapCampus" ;
+	rr:predicateObjectMap map:pom_014, map:pom_015, map:pom_016 ;
+	rr:subjectMap map:s_003 .
+
+map:map_triplesMapCursoacademico_000 rml:logicalSource map:source_001 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapCursoacademico" ;
+	rr:predicateObjectMap map:pom_005 ;
+	rr:subjectMap map:s_001 .
+
+map:map_triplesMapDepartamento_000 rml:logicalSource map:source_002 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapDepartamento" ;
+	rr:predicateObjectMap map:pom_006, map:pom_007, map:pom_008, map:pom_009, map:pom_010, map:pom_011, map:pom_012, map:pom_013 ;
+	rr:subjectMap map:s_002 .
+
+map:map_triplesMapMunicipio_000 rml:logicalSource map:source_004 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapMunicipio" ;
+	rr:predicateObjectMap map:pom_017, map:pom_018 ;
+	rr:subjectMap map:s_004 .
+
+map:map_triplesMapUniversidad_000 rml:logicalSource map:source_000 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapUniversidad" ;
+	rr:predicateObjectMap map:pom_000, map:pom_001, map:pom_002, map:pom_003, map:pom_004 ;
+	rr:subjectMap map:s_000 .
+
+map:om_000 rdf:type rr:ObjectMap ;
+	rr:constant "http://openuniversitydata/def#Universidad" ;
+	rr:termType rr:IRI .
+
+map:om_001 rml:reference "cod_universidad" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_002 rdf:type rr:ObjectMap ;
+	rr:constant "http://www.w3.org/ns/org#Organization" ;
+	rr:termType rr:Literal .
+
+map:om_003 rdf:type rr:ObjectMap ;
+	rr:joinCondition map:jc_000 ;
+	rr:parentTriplesMap map:map_triplesMapCursoacademico_000 .
+
+map:om_004 rdf:type rr:ObjectMap ;
+	rr:joinCondition map:jc_001 ;
+	rr:parentTriplesMap map:map_triplesMapDepartamento_000 .
+
+map:om_005 rdf:type rr:ObjectMap ;
+	rr:constant "http://openuniversitydata/def#CursoAcademico" ;
+	rr:termType rr:IRI .
+
+map:om_006 rdf:type rr:ObjectMap ;
+	rr:constant "http://openuniversitydata/def/organizacion-y-servicios#Departamento" ;
+	rr:termType rr:IRI .
+
+map:om_007 rml:reference "cod_departamento" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_008 rml:reference "fecha_desde_situacion_departamento" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:date ;
+	rr:termType rr:Literal .
+
+map:om_009 rdf:type rr:ObjectMap ;
+	rr:template "http://openuniversitydata/kos/organizacion-y-servicios/situacion-departamento/{des_situacion_departamento}" ;
+	rr:termType rr:Literal .
+
+map:om_010 rdf:type rr:ObjectMap ;
+	rr:constant "http://www.w3.org/ns/org#Organization" ;
+	rr:termType rr:Literal .
+
+map:om_011 rdf:type rr:ObjectMap ;
+	rr:joinCondition map:jc_002 ;
+	rr:parentTriplesMap map:map_triplesMapMunicipio_000 .
+
+map:om_012 rdf:type rr:ObjectMap ;
+	rr:joinCondition map:jc_003 ;
+	rr:parentTriplesMap map:map_triplesMapUniversidad_000 .
+
+map:om_013 rdf:type rr:ObjectMap ;
+	rr:joinCondition map:jc_004 ;
+	rr:parentTriplesMap map:map_triplesMapCampus_000 .
+
+map:om_014 rdf:type rr:ObjectMap ;
+	rr:constant "http://openuniversitydata/def/organizacion-y-servicios#Campus" ;
+	rr:termType rr:IRI .
+
+map:om_015 rml:reference "cod_campus" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_016 rdf:type rr:ObjectMap ;
+	rr:joinCondition map:jc_005 ;
+	rr:parentTriplesMap map:map_triplesMapMunicipio_000 .
+
+map:om_017 rdf:type rr:ObjectMap ;
+	rr:constant "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio" ;
+	rr:termType rr:IRI .
+
+map:om_018 rml:reference "cod_municipio" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:pm_000 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_001 rdf:type rr:PredicateMap ;
+	rr:constant dct:identifier .
+
+map:pm_002 rdf:type rr:PredicateMap ;
+	rr:constant rdfs:subClassOf .
+
+map:pm_003 rdf:type rr:PredicateMap ;
+	rr:constant univ:tieneAsociado .
+
+map:pm_004 rdf:type rr:PredicateMap ;
+	rr:constant org:hasSubOrganization .
+
+map:pm_005 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_006 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_007 rdf:type rr:PredicateMap ;
+	rr:constant dct:identifier .
+
+map:pm_008 rdf:type rr:PredicateMap ;
+	rr:constant orgser:fechaDesdeSituacionDepartamento .
+
+map:pm_009 rdf:type rr:PredicateMap ;
+	rr:constant orgser:situacionDepartamento .
+
+map:pm_010 rdf:type rr:PredicateMap ;
+	rr:constant rdfs:subClassOf .
+
+map:pm_011 rdf:type rr:PredicateMap ;
+	rr:constant esadm:municipio .
+
+map:pm_012 rdf:type rr:PredicateMap ;
+	rr:constant org:subOrganizationOf .
+
+map:pm_013 rdf:type rr:PredicateMap ;
+	rr:constant orgser:estaUbicado .
+
+map:pm_014 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_015 rdf:type rr:PredicateMap ;
+	rr:constant dct:identifier .
+
+map:pm_016 rdf:type rr:PredicateMap ;
+	rr:constant esadm:municipio .
+
+map:pm_017 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_018 rdf:type rr:PredicateMap ;
+	rr:constant dct:identifier .
+
+map:pom_000 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_000 ;
+	rr:predicateMap map:pm_000 .
+
+map:pom_001 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_001 ;
+	rr:predicateMap map:pm_001 .
+
+map:pom_002 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_002 ;
+	rr:predicateMap map:pm_002 .
+
+map:pom_003 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_003 ;
+	rr:predicateMap map:pm_003 .
+
+map:pom_004 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_004 ;
+	rr:predicateMap map:pm_004 .
+
+map:pom_005 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_005 ;
+	rr:predicateMap map:pm_005 .
+
+map:pom_006 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_006 ;
+	rr:predicateMap map:pm_006 .
+
+map:pom_007 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_007 ;
+	rr:predicateMap map:pm_007 .
+
+map:pom_008 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_008 ;
+	rr:predicateMap map:pm_008 .
+
+map:pom_009 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_009 ;
+	rr:predicateMap map:pm_009 .
+
+map:pom_010 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_010 ;
+	rr:predicateMap map:pm_010 .
+
+map:pom_011 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_011 ;
+	rr:predicateMap map:pm_011 .
+
+map:pom_012 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_012 ;
+	rr:predicateMap map:pm_012 .
+
+map:pom_013 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_013 ;
+	rr:predicateMap map:pm_013 .
+
+map:pom_014 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_014 ;
+	rr:predicateMap map:pm_014 .
+
+map:pom_015 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_015 ;
+	rr:predicateMap map:pm_015 .
+
+map:pom_016 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_016 ;
+	rr:predicateMap map:pm_016 .
+
+map:pom_017 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_017 ;
+	rr:predicateMap map:pm_017 .
+
+map:pom_018 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_018 ;
+	rr:predicateMap map:pm_018 .
+
+map:rules_000 <http://rdfs.org/ns/void#exampleResource> map:map_triplesMapCampus_000, map:map_triplesMapCursoacademico_000, map:map_triplesMapDepartamento_000, map:map_triplesMapMunicipio_000, map:map_triplesMapUniversidad_000 ;
+	rdf:type <http://rdfs.org/ns/void#Dataset> .
+
+map:s_000 rdf:type rr:SubjectMap ;
+	rr:template "http://openuniversitydata/recurso/{des_universidad}" .
+
+map:s_001 rdf:type rr:SubjectMap ;
+	rr:template "http://openuniversitydata/recurso/{curso_academico}" .
+
+map:s_002 rdf:type rr:SubjectMap ;
+	rr:template "http://openuniversitydata/recurso/{des_departamento}" .
+
+map:s_003 rdf:type rr:SubjectMap ;
+	rr:template "http://openuniversitydata/recurso/{des_campus}" .
+
+map:s_004 rdf:type rr:SubjectMap ;
+	rr:template "http://openuniversitydata/recurso/{des_municipio}" .
+
+map:source_000 rml:referenceFormulation ql:CSV ;
+	rml:source "UC3M-2021-22.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_001 rml:referenceFormulation ql:CSV ;
+	rml:source "UC3M-2021-22.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_002 rml:referenceFormulation ql:CSV ;
+	rml:source "UC3M-2021-22.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_003 rml:referenceFormulation ql:CSV ;
+	rml:source "UC3M-2021-22.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_004 rml:referenceFormulation ql:CSV ;
+	rml:source "UC3M-2021-22.csv" ;
+	rdf:type rml:LogicalSource .
+
