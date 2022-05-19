@@ -121,30 +121,30 @@ mappings:
       - [geo:long, $(longitude), xsd:double]
       - [rdfs:subClassOf, geosparql:Geometry]
 
-  triplesMapGeometry:
-    sources:
-      - [UC3M-2021-22.csv~csv]
-    s: http://openuniversitydata/recurso/$()
-    po:
-      - [a, geosparql:Geometry]
-      - [geosparql:asWKT, $()]
-      - [rdfs:subClassOf, geosparql:SpatialObject]
-      - p: geosparql:hasGeometry
-        o:
-        - mapping: triplesMapFeature
-          condition:
-            function: equal
-            parameters:
-              - [str1, $()]
-              - [str2, $()]
+  # triplesMapGeometry:
+  #   sources:
+  #     - [UC3M-2021-22.csv~csv]
+  #   s: http://openuniversitydata/recurso/$()
+  #   po:
+  #     - [a, geosparql:Geometry]
+  #     - [geosparql:asWKT, $()]
+  #     - [rdfs:subClassOf, geosparql:SpatialObject]
+  #     - p: geosparql:hasGeometry
+  #       o:
+  #       - mapping: triplesMapFeature
+  #         condition:
+  #           function: equal
+  #           parameters:
+  #             - [str1, $()]
+  #             - [str2, $()]
 
-  triplesMapFeature:
-    sources:
-      - [UC3M-2021-22.csv~csv]
-    s: http://openuniversitydata/recurso/$()
-    po:
-      - [a, geosparql:Feature]
-      - [rdfs:subClassOf, geosparql:SpatialObject]
+  # triplesMapFeature:
+  #   sources:
+  #     - [UC3M-2021-22.csv~csv]
+  #   s: http://openuniversitydata/recurso/$()
+  #   po:
+  #     - [a, geosparql:Feature]
+  #     - [rdfs:subClassOf, geosparql:SpatialObject]
 
   # triplesMapOrganization:
   #   sources:
@@ -170,9 +170,9 @@ mappings:
   #     - [a, org:Site]
   #     - [rdfs:subClassOf, geosparql:Feature]
 
-  triplesMapSpatialobject:
-    sources:
-      - [UC3M-2021-22.csv~csv]
-    s: http://openuniversitydata/recurso/$()
-    po:
-      - [a, geosparql:SpatialObject]
+  # triplesMapSpatialobject:
+  #   sources:
+  #     - [UC3M-2021-22.csv~csv]
+  #   s: http://openuniversitydata/recurso/$()
+  #   po:
+  #     - [a, geosparql:SpatialObject]
