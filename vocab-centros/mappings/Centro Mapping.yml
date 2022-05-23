@@ -21,7 +21,7 @@ mappings:
   triplesMapUniversidad:
     sources:
       - [UC3M-2021-22.csv~csv]
-    s: http://openuniversitydata/recurso/$(des_universidad)
+    s: http://www.example.org/openuniversitydata/universidad/$(des_universidad)
     po:
       - [a, univ:Universidad]
       - [dct:identifier, $(cod_universidad)]
@@ -46,7 +46,7 @@ mappings:
   triplesMapUniversidad2:
     sources:
       - [UCM-2021-22.csv~csv]
-    s: http://openuniversitydata/recurso/$(des_universidad)
+    s: http://www.example.org/openuniversitydata/universidad/$(des_universidad)
     po:
       - [a, univ:Universidad]
       - [dct:identifier, $(cod_universidad)]
@@ -71,21 +71,21 @@ mappings:
   triplesMapCursoacademico:
     sources:
       - [UC3M-2021-22.csv~csv]
-    s: http://openuniversitydata/recurso/$(curso_academico)
+    s: http://www.example.org/openuniversitydata/curso/$(curso_academico)
     po:
       - [a, univ:CursoAcademico]
 
   triplesMapCursoacademico2:
     sources:
       - [UCM-2021-22.csv~csv]
-    s: http://openuniversitydata/recurso/$(curso_academico)
+    s: http://www.example.org/openuniversitydata/curso/$(curso_academico)
     po:
       - [a, univ:CursoAcademico]
 
   triplesMapCentro:
     sources:
       - [UC3M-2021-22.csv~csv]
-    s: http://openuniversitydata/recurso/$(des_centro)
+    s: http://www.example.org/openuniversitydata/centro/$(des_centro)
     po:
       - [a, orgser:Centro]
       - [dct:identifier, $(cod_centro)]
@@ -122,7 +122,7 @@ mappings:
   triplesMapCentro2:
     sources:
       - [UCM-2021-22.csv~csv]
-    s: http://openuniversitydata/recurso/$(des_centro)
+    s: http://www.example.org/openuniversitydata/centro/$(des_centro)
     po:
       - [a, orgser:Centro]
       - [dct:identifier, $(cod_centro)]
@@ -159,7 +159,7 @@ mappings:
   triplesMapCampus:
     sources:
       - [UC3M-2021-22.csv~csv]
-    s: http://openuniversitydata/recurso/$(des_campus)
+    s: http://www.example.org/openuniversitydata/campus/$(des_campus)
     po:
       - [a, orgser:Campus]
       - [dct:identifier, $(cod_campus)]
@@ -175,7 +175,7 @@ mappings:
   triplesMapCampus2:
     sources:
       - [UCM-2021-22.csv~csv]
-    s: http://openuniversitydata/recurso/$(des_campus)
+    s: http://www.example.org/openuniversitydata/campus/$(des_campus)
     po:
       - [a, orgser:Campus]
       - [dct:identifier, $(cod_campus)]
@@ -191,7 +191,7 @@ mappings:
   triplesMapMunicipio:
     sources:
       - [UC3M-2021-22.csv~csv]
-    s: http://openuniversitydata/recurso/$(des_municipio)
+    s: http://www.example.org/openuniversitydata/municipio/$(des_municipio)
     po:
       - [a, esadm:Municipio]
       - [dct:identifier, $(cod_municipio)]
@@ -199,7 +199,7 @@ mappings:
   triplesMapMunicipio2:
     sources:
       - [UCM-2021-22.csv~csv]
-    s: http://openuniversitydata/recurso/$(des_municipio)
+    s: http://www.example.org/openuniversitydata/municipio/$(des_municipio)
     po:
       - [a, esadm:Municipio]
       - [dct:identifier, $(cod_municipio)]
@@ -207,7 +207,7 @@ mappings:
   triplesMapPoint:
     sources:
       - [UC3M-2021-22.csv~csv]
-    s: http://openuniversitydata/recurso/$(des_centro);$(des_campus)
+    s: http://www.example.org/openuniversitydata/point/$(des_centro);$(des_campus)
     po:
       - [a, geosparql:Point]
       - [geo:lat, $(latitude), xsd:double]
@@ -217,65 +217,10 @@ mappings:
   triplesMapPoint2:
     sources:
       - [UCM-2021-22.csv~csv]
-    s: http://openuniversitydata/recurso/$(des_centro);$(des_campus)
+    s: http://www.example.org/openuniversitydata/point/$(des_centro);$(des_campus)
     po:
       - [a, geosparql:Point]
       - [geo:lat, $(latitude), xsd:double]
       - [geo:long, $(longitude), xsd:double]
       - [rdfs:subClassOf, geosparql:Geometry]
 
-  # triplesMapGeometry:
-  #   sources:
-  #     - [UC3M-2021-22.csv~csv]
-  #   s: http://openuniversitydata/recurso/$()
-  #   po:
-  #     - [a, geosparql:Geometry]
-  #     - [geosparql:asWKT, $()]
-  #     - [rdfs:subClassOf, geosparql:SpatialObject]
-  #     - p: geosparql:hasGeometry
-  #       o:
-  #       - mapping: triplesMapFeature
-  #         condition:
-  #           function: equal
-  #           parameters:
-  #             - [str1, $()]
-  #             - [str2, $()]
-
-  # triplesMapFeature:
-  #   sources:
-  #     - [UC3M-2021-22.csv~csv]
-  #   s: http://openuniversitydata/recurso/$()
-  #   po:
-  #     - [a, geosparql:Feature]
-  #     - [rdfs:subClassOf, geosparql:SpatialObject]
-
-  # triplesMapOrganization:
-  #   sources:
-  #     - [UC3M-2021-22.csv~csv]
-  #   s: http://openuniversitydata/recurso/$(des_universidad)
-  #   s: http://openuniversitydata/recurso/$(des_centro)
-  #   po:
-  #     - [a, org:Organization]
-  #     - p: org:hasSite
-  #       o:
-  #       - mapping: triplesMapSite
-  #         condition:
-  #           function: equal
-  #           parameters:
-  #             - [str1, $()]
-  #             - [str2, $()]
-
-  # triplesMapSite:
-  #   sources:
-  #     - [UC3M-2021-22.csv~csv]
-  #   s: http://openuniversitydata/recurso/$()
-  #   po:
-  #     - [a, org:Site]
-  #     - [rdfs:subClassOf, geosparql:Feature]
-
-  # triplesMapSpatialobject:
-  #   sources:
-  #     - [UC3M-2021-22.csv~csv]
-  #   s: http://openuniversitydata/recurso/$()
-  #   po:
-  #     - [a, geosparql:SpatialObject]
