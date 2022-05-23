@@ -1,0 +1,44 @@
+ @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+@prefix geo: <http://www.owl-ontologies.com/geo#> .
+@prefix geosparql: <http://www.owl-ontologies.com/geosparql#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix orgser: <http://openuniversitydata/def/organizacion-y-servicios#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix univ: <http://openuniversitydata/def#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.example.org/openuniversitydata/departamento/Departamento_de_Inteligencia_Artificial> a orgser:Departamento ;
+    dct:identifier "UPM-1002" ;
+    orgser:fechaDesdeSituacionDepartamento "2010-07-01"^^xsd:date ;
+    orgser:situacionDepartamento <http://openuniversitydata/kos/organizacion-y-servicios/situacion-departamento/activo> ;
+    esadm:municipio <http://www.example.org/openuniversitydata/municipio/Boadilla_del_Monte> ;
+    orgser:estaUbicado <http://www.example.org/openuniversitydata/campus/Campus_de_Montegancedo> ;
+    org:hasSite <http://www.example.org/openuniversitydata/centro/ETSIINF> ;
+    org:subOrganizationOf <http://www.example.org/openuniversitydata/universidad/UPM> .
+    
+<http://www.example.org/openuniversitydata/universidad/UPM> a univ:Universidad ;
+    dct:identifier "025" ;
+    univ:tieneAsociado <http://www.example.org/openuniversitydata/curso/2021_22> ;
+    org:hasSubOrganization <http://www.example.org/openuniversitydata/Departamento_de_Inteligencia_Artificial> .
+    
+<http://www.example.org/openuniversitydata/curso/2021_22> a univ:CursoAcademico .
+
+<http://www.example.org/openuniversitydata/municipio/Boadilla_del_Monte> a esadm:Municipio ;
+    dct:identifier "022" .
+
+<http://www.example.org/openuniversitydata/campus/Campus_de_Montegancedo> a orgser:Campus;
+    dct:identifier "02214" ;
+    esadm:municipio <http://www.example.org/openuniversitydata/municipio/Boadilla_del_Monte> .
+
+<http://www.example.org/openuniversitydata/centro/ETSIINF> a orgser:Centro ;
+    dct:identifier "28027114" ;
+    geosparql:hasGeometry univ:ETSIINF_geometry .
+
+univ:ETSIINF_geometry a geosparql:Point ;
+    geo:long "-3.83561"^^xsd:double ;
+    geo:lat "40.40575"^^xsd:double ;
+    geosparql:asWKT "POINT (-3.83561 40.40575)"^^geosparql:wktLiteral .
+    
