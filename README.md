@@ -6,14 +6,14 @@ El propósito de este vocabulario es describir de forma semántica todo lo que h
 
 ## Links de interés
 Ontología: <br>
-https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-centros/ontology/Centro%20Ontology.ttl <br>
+https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-centros/ontology/Centro%20Ontology.ttl <br><br>
 Documentación de la ontología: <br>
-https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-centros/doc/index-es.html <br>
+https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-centros/doc/index-es.html <br><br>
 Modelo ontológico conceptual: <br>
-https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-centros/resources/Centro%20Diagrama_v4.svg <br>
+https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-centros/resources/Centro%20Diagrama_v4.svg <br><br>
 Ejemplo: <br>
-https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-centros/examples/Centro%20Ejemplo.ttl <br>
+https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-centros/examples/Centro%20Ejemplo.ttl<br><br>
 Mapping de la ontología: <br>
-https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-centros/mappings/Centro%20Mapping.yml <br>
+https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-centros/mappings/Centro%20Mapping.yml <br><br>
 Grafo de conocimientos RDF: <br>
-https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-centros/Centro%20Knowledge%20Graph.nt <br>
+https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-centros/Centro%20Knowledge%20Graph.nt <br><br>
