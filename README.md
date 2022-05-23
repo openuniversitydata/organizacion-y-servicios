@@ -21,5 +21,5 @@ Mappings de las ontologías: <br>
 https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-centros/mappings/Centro%20Mapping.yml <br>
 https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-departamentos/mappings/Departamento%20Mapping.yml <br><br>
 Grafos de conocimientos RDF: <br>
-https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-centros/Centro%20Knowledge%20Graph.nt <br>
-https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-departamentos/Departamento%20Knowledge%20Graph.nt <br><br>
+https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-centros/examples/Centro%20Knowledge%20Graph.nt <br>
+https://github.com/openuniversitydata/organizacion-y-servicios/blob/main/vocab-departamentos/examples/Departamento%20Knowledge%20Graph.nt <br><br>
