@@ -10,37 +10,35 @@
 @prefix univ: <http://openuniversitydata/def#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://openuniversitydata/recurso/ETSIINF> a orgser:Centro ;
+<http://www.example.org/openuniversitydata/centro/ETSIINF> a orgser:Centro ;
     dct:identifier "28027114" ;
-    orgser:fechaDesdeSituacionCentro "19760701"^^xsd:date ;
-    orgser:tipoCentro <http://openuniversitydata/kos/organizacion-y-servicios/tipo-centro/centroPropio> ;
+    orgser:fechaDesdeSituacionCentro "1976-07-01"^^xsd:date ;
+    orgser:tipoCentro <http://openuniversitydata/kos/organizacion-y-servicios/tipo-centro/propio> ;
     orgser:naturalezaCentro <http://openuniversitydata/kos/organizacion-y-servicios/naturaleza-centro/publico> ;
     orgser:situacionCentro <http://openuniversitydata/kos/organizacion-y-servicios/situacion-centro/activo> ;
-    esadm:municipio <http://openuniversitydata/recurso/Boadilla_del_Monte> ;
-    orgser:estaUbicado <http://openuniversitydata/recurso/Campus_de_Montegancedo> ;
-    org:hasSite univ:ETSIINF_location ;
-    org:subOrganizationOf <http://openuniversitydata/recurso/UPM> ;
-    rdfs:subClassOf org:Organization .
+    esadm:municipio <http://www.example.org/openuniversitydata/municipio/Boadilla_del_Monte> ;
+    orgser:estaUbicado <http://www.example.org/openuniversitydata/campus/Campus_de_Montegancedo> ;
+    org:hasSite <http://www.example.org/openuniversitydata/point/-3.83561;40.40575> ;
+    org:subOrganizationOf <http://www.example.org/openuniversitydata/universidad/UPM> .
     
-<http://openuniversitydata/recurso/UPM> a univ:Universidad ;
+<http://www.example.org/openuniversitydata/universidad/UPM> a univ:Universidad ;
     dct:identifier "025" ;
-    univ:tieneAsociado <http://openuniversitydata/recurso/2021_22> ;
-    org:hasSubOrganization <http://openuniversitydata/recurso/ETSIINF> ;
-    rdfs:subClassOf org:Organization .
+    univ:tieneAsociado <http://www.example.org/openuniversitydata/curso/2021_22> ;
+    org:hasSubOrganization <http://www.example.org/openuniversitydata/centro/ETSIINF> .
 
-<http://openuniversitydata/recurso/2021_22> a univ:CursoAcademico .
+<http://www.example.org/openuniversitydata/curso/2021_22> a univ:CursoAcademico .
 
-<http://openuniversitydata/recurso/Boadilla_del_Monte> a esadm:Municipio ;
+<http://www.example.org/openuniversitydata/municipio/Boadilla_del_Monte> a esadm:Municipio ;
     dct:identifier "022" .
 
-<http://openuniversitydata/recurso/Campus_de_Montegancedo> a orgser:Campus;
+<http://www.example.org/openuniversitydata/campus/Campus_de_Montegancedo> a orgser:Campus;
     dct:identifier "02214" ;
-    esadm:municipio <http://openuniversitydata/recurso/Boadilla_del_Monte> .
+    esadm:municipio <http://www.example.org/openuniversitydata/municipio/Boadilla_del_Monte> .
 
-univ:ETSIINF_location geosparql:hasGeometry univ:ETSIINF_geometry .
+<http://www.example.org/openuniversitydata/point/-3.83561;40.40575> geosparql:hasGeometry univ:ETSIINF_geometry .
 
 univ:ETSIINF_geometry a geosparql:Point ;
     geo:long "-3.83561"^^xsd:double ;
     geo:lat "40.40575"^^xsd:double ;
-    geosparql:asWKT "POINT (-3.83561,40.40575)"^^geosparql:wktLiteral .
+    geosparql:asWKT "POINT (-3.83561 40.40575)"^^geosparql:wktLiteral .
     
