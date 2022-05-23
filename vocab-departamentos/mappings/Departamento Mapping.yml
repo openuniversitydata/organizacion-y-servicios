@@ -1,0 +1,201 @@
+prefixes:
+  xsd: http://www.w3.org/2001/XMLSchema#
+  rr: http://www.w3.org/ns/r2rml#
+  rml: http://semweb.mmlab.be/ns/rml#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  ql: http://semweb.mmlab.be/ns/ql#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  foaf: http://xmlns.com/foaf/0.1/
+  schema: http://schema.org/
+  dc: http://purl.org/dc/elements/1.1/
+  skos: http://www.w3.org/2004/02/skos/core#
+  univ: http://openuniversitydata/def#
+  orgser: http://openuniversitydata/def/organizacion-y-servicios#
+  esadm: http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#
+  geosparql: http://www.owl-ontologies.com/geosparql#
+  org: http://www.w3.org/ns/org#
+  dct: http://purl.org/dc/terms/
+  geo: http://www.owl-ontologies.com/geo#
+
+mappings:
+  triplesMapUniversidad:
+    sources:
+      - [UC3M-2021-22.csv~csv]
+    s: http://www.example.org/openuniversitydata/universidad/$(des_universidad)
+    po:
+      - [a, univ:Universidad]
+      - [dct:identifier, $(cod_universidad)]
+      - [rdfs:subClassOf, org:Organization]
+      - p: univ:tieneAsociado
+        o:
+        - mapping: triplesMapCursoacademico
+          condition:
+            function: equal
+            parameters:
+              - [str1, $(curso_academico), o]
+              - [str2, $(curso_academico), o]
+      - p: org:hasSubOrganization
+        o:
+        - mapping: triplesMapDepartamento
+          condition:
+            function: equal
+            parameters:
+              - [str1, $(des_departamento), o]
+              - [str2, $(des_departamento), o]
+
+  triplesMapUniversidad2:
+    sources:
+      - [UCM-2021-22.csv~csv]
+    s: http://www.example.org/openuniversitydata/universidad/$(des_universidad)
+    po:
+      - [a, univ:Universidad]
+      - [dct:identifier, $(cod_universidad)]
+      - [rdfs:subClassOf, org:Organization]
+      - p: univ:tieneAsociado
+        o:
+        - mapping: triplesMapCursoacademico2
+          condition:
+            function: equal
+            parameters:
+              - [str1, $(curso_academico), o]
+              - [str2, $(curso_academico), o]
+      - p: org:hasSubOrganization
+        o:
+        - mapping: triplesMapDepartamento2
+          condition:
+            function: equal
+            parameters:
+              - [str1, $(des_departamento), o]
+              - [str2, $(des_departamento), o]
+
+  triplesMapCursoacademico:
+    sources:
+      - [UC3M-2021-22.csv~csv]
+    s: http://www.example.org/openuniversitydata/curso/$(curso_academico)
+    po:
+      - [a, univ:CursoAcademico]
+
+  triplesMapCursoacademico2:
+    sources:
+      - [UCM-2021-22.csv~csv]
+    s: http://www.example.org/openuniversitydata/curso/$(curso_academico)
+    po:
+      - [a, univ:CursoAcademico]
+
+  triplesMapDepartamento:
+    sources:
+      - [UC3M-2021-22.csv~csv]
+    s: http://www.example.org/openuniversitydata/departamento/$(des_departamento)
+    po:
+      - [a, orgser:Departamento]
+      - [dct:identifier, $(cod_departamento)]
+      - [orgser:fechaDesdeSituacionDepartamento, $(fecha_desde_situacion_departamento), xsd:date]
+      - [orgser:situacionDepartamento, http://openuniversitydata/kos/organizacion-y-servicios/situacion-departamento/$(des_situacion_departamento)]
+      - [rdfs:subClassOf, org:Organization]
+      - p: esadm:municipio
+        o:
+        - mapping: triplesMapMunicipio
+          condition:
+            function: equal
+            parameters:
+              - [str1, $(des_municipio), o]
+              - [str2, $(des_municipio), o]
+      - p: org:subOrganizationOf
+        o:
+        - mapping: triplesMapUniversidad
+          condition:
+            function: equal
+            parameters:
+              - [str1, $(des_universidad), o]
+              - [str2, $(des_universidad), o]
+      - p: orgser:estaUbicado
+        o:
+        - mapping: triplesMapCampus
+          condition:
+            function: equal
+            parameters:
+            - [str1, $(des_campus), o]
+            - [str2, $(des_campus), o]
+
+  triplesMapDepartamento2:
+    sources:
+      - [UCM-2021-22.csv~csv]
+    s: http://www.example.org/openuniversitydata/departamento/$(des_departamento)
+    po:
+      - [a, orgser:Departamento]
+      - [dct:identifier, $(cod_departamento)]
+      - [orgser:fechaDesdeSituacionDepartamento, $(fecha_desde_situacion_departamento), xsd:date]
+      - [orgser:situacionDepartamento, http://openuniversitydata/kos/organizacion-y-servicios/situacion-departamento/$(des_situacion_departamento)]
+      - [rdfs:subClassOf, org:Organization]
+      - p: esadm:municipio
+        o:
+        - mapping: triplesMapMunicipio2
+          condition:
+            function: equal
+            parameters:
+              - [str1, $(des_municipio), o]
+              - [str2, $(des_municipio), o]
+      - p: org:subOrganizationOf
+        o:
+        - mapping: triplesMapUniversidad2
+          condition:
+            function: equal
+            parameters:
+              - [str1, $(des_universidad), o]
+              - [str2, $(des_universidad), o]
+      - p: orgser:estaUbicado
+        o:
+        - mapping: triplesMapCampus2
+          condition:
+            function: equal
+            parameters:
+            - [str1, $(des_campus), o]
+            - [str2, $(des_campus), o]
+
+  triplesMapCampus:
+    sources:
+      - [UC3M-2021-22.csv~csv]
+    s: http://www.example.org/openuniversitydata/campus/$(des_campus)
+    po:
+      - [a, orgser:Campus]
+      - [dct:identifier, $(cod_campus)]
+      - p: esadm:municipio
+        o:
+        - mapping: triplesMapMunicipio
+          condition:
+            function: equal
+            parameters:
+              - [str1, $(des_municipio), o]
+              - [str2, $(des_municipio), o]
+
+  triplesMapCampus2:
+    sources:
+      - [UCM-2021-22.csv~csv]
+    s: http://www.example.org/openuniversitydata/campus/$(des_campus)
+    po:
+      - [a, orgser:Campus]
+      - [dct:identifier, $(cod_campus)]
+      - p: esadm:municipio
+        o:
+        - mapping: triplesMapMunicipio2
+          condition:
+            function: equal
+            parameters:
+              - [str1, $(des_municipio), o]
+              - [str2, $(des_municipio), o]
+
+  triplesMapMunicipio:
+    sources:
+      - [UC3M-2021-22.csv~csv]
+    s: http://www.example.org/openuniversitydata/municipio/$(des_municipio)
+    po:
+      - [a, esadm:Municipio]
+      - [dct:identifier, $(cod_municipio)]
+
+  triplesMapMunicipio2:
+    sources:
+      - [UCM-2021-22.csv~csv]
+    s: http://www.example.org/openuniversitydata/municipio/$(des_municipio)
+    po:
+      - [a, esadm:Municipio]
+      - [dct:identifier, $(cod_municipio)]
