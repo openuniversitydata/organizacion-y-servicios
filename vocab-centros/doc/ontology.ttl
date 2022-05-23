@@ -1,0 +1,281 @@
+@prefix : <http://openuniversitydata/def#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://openuniversitydata/def#> .
+
+<http://openuniversitydata/def#> rdf:type owl:Ontology ;
+                                  <http://purl.org/dc/elements/1.1/creator> "Víctor Morcuende" ;
+                                  <http://purl.org/dc/elements/1.1/description> "Ontology code created by Chowlk" ;
+                                  <http://purl.org/dc/elements/1.1/title> "Centro Ontology" ;
+                                  owl:versionInfo "0.0.4" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://openuniversitydata/def#tieneAsociado
+:tieneAsociado rdf:type owl:ObjectProperty ;
+               rdfs:domain :Universidad ;
+               rdfs:range :CursoAcademico ;
+               rdfs:label "tiene asociado" .
+
+
+###  http://openuniversitydata/def/organizacion-y-servicios#estaUbicado
+<http://openuniversitydata/def/organizacion-y-servicios#estaUbicado> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:domain <http://openuniversitydata/def/organizacion-y-servicios#Centro> ;
+                                                                     rdfs:range <http://openuniversitydata/def/organizacion-y-servicios#Campus> ;
+                                                                     rdfs:label "esta ubicado" .
+
+
+###  http://openuniversitydata/def/organizacion-y-servicios#naturalezaCentro
+<http://openuniversitydata/def/organizacion-y-servicios#naturalezaCentro> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:domain <http://openuniversitydata/def/organizacion-y-servicios#Centro> ;
+                                                                          rdfs:range [ owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                                                                            [ rdf:type owl:Restriction ;
+                                                                                                              owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                                                                              owl:hasValue <http://openuniversitydata/kos/organizacion-y-servicios/naturaleza-centro>
+                                                                                                            ]
+                                                                                                          ) ;
+                                                                                       rdf:type owl:Class
+                                                                                     ] ;
+                                                                          rdfs:label "naturaleza centro" .
+
+
+###  http://openuniversitydata/def/organizacion-y-servicios#situacionCentro
+<http://openuniversitydata/def/organizacion-y-servicios#situacionCentro> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:domain <http://openuniversitydata/def/organizacion-y-servicios#Centro> ;
+                                                                         rdfs:range [ owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                                                                           [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                                                                             owl:hasValue <http://openuniversitydata/kos/organizacion-y-servicios/situacion-centro>
+                                                                                                           ]
+                                                                                                         ) ;
+                                                                                      rdf:type owl:Class
+                                                                                    ] ;
+                                                                         rdfs:label "situacion centro" .
+
+
+###  http://openuniversitydata/def/organizacion-y-servicios#tipoCentro
+<http://openuniversitydata/def/organizacion-y-servicios#tipoCentro> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:domain <http://openuniversitydata/def/organizacion-y-servicios#Centro> ;
+                                                                    rdfs:range [ owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                                                                        owl:hasValue <http://openuniversitydata/kos/organizacion-y-servicios/tipo-centro>
+                                                                                                      ]
+                                                                                                    ) ;
+                                                                                 rdf:type owl:Class
+                                                                               ] ;
+                                                                    rdfs:label "tipo centro" .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#municipio
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#municipio> rdf:type owl:ObjectProperty ;
+                                                                                   rdfs:domain <http://openuniversitydata/def/organizacion-y-servicios#Campus> ,
+                                                                                               <http://openuniversitydata/def/organizacion-y-servicios#Centro> ;
+                                                                                   rdfs:range <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> ;
+                                                                                   rdfs:label "municipio" .
+
+
+###  http://www.owl-ontologies.com/geosparql#asWKT
+<http://www.owl-ontologies.com/geosparql#asWKT> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain <http://www.owl-ontologies.com/geosparql#Geometry> ;
+                                                rdfs:range xsd:wKTLiteral .
+
+
+###  http://www.owl-ontologies.com/geosparql#hasGeometry
+<http://www.owl-ontologies.com/geosparql#hasGeometry> rdf:type owl:ObjectProperty ;
+                                                      rdfs:domain <http://www.owl-ontologies.com/geosparql#Geometry> ;
+                                                      rdfs:range <http://www.owl-ontologies.com/geosparql#Feature> ;
+                                                      rdfs:label "has geometry" .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/org#hasSite
+<http://www.w3.org/ns/org#hasSite> rdf:type owl:ObjectProperty ;
+                                   rdfs:domain <http://www.w3.org/ns/org#Organization> ;
+                                   rdfs:range <http://www.w3.org/ns/org#Site> ;
+                                   rdfs:label "has site" .
+
+
+###  http://www.w3.org/ns/org#hasSubOrganization
+<http://www.w3.org/ns/org#hasSubOrganization> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain :Universidad ;
+                                              rdfs:range <http://openuniversitydata/def/organizacion-y-servicios#Centro> ;
+                                              rdfs:label "has sub organization" .
+
+
+###  http://www.w3.org/ns/org#subOrganizationOf
+<http://www.w3.org/ns/org#subOrganizationOf> rdf:type owl:ObjectProperty ;
+                                             rdfs:domain <http://openuniversitydata/def/organizacion-y-servicios#Centro> ;
+                                             rdfs:range :Universidad ;
+                                             rdfs:label "sub organization of" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://openuniversitydata/def/organizacion-y-servicios#fechaDesdeSituacionCentro
+<http://openuniversitydata/def/organizacion-y-servicios#fechaDesdeSituacionCentro> rdf:type owl:DatatypeProperty ;
+                                                                                   rdfs:domain <http://openuniversitydata/def/organizacion-y-servicios#Centro> ;
+                                                                                   rdfs:range xsd:date ;
+                                                                                   rdfs:label "fecha desde situacion centro" .
+
+
+###  http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain :Universidad ;
+                                      rdfs:range xsd:string ;
+                                      rdfs:label "identifier" .
+
+
+###  http://www.owl-ontologies.com/geo#lat
+<http://www.owl-ontologies.com/geo#lat> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <http://www.owl-ontologies.com/geosparql#Point> ;
+                                        rdfs:range xsd:double ;
+                                        rdfs:label "lat" .
+
+
+###  http://www.owl-ontologies.com/geo#long
+<http://www.owl-ontologies.com/geo#long> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <http://www.owl-ontologies.com/geosparql#Point> ;
+                                         rdfs:range xsd:double ;
+                                         rdfs:label "long" .
+
+
+###  http://www.owl-ontologies.com/geosparql#asWKT
+<http://www.owl-ontologies.com/geosparql#asWKT> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://openuniversitydata/def#CursoAcademico
+:CursoAcademico rdf:type owl:Class ;
+                rdfs:label "Curso Academico" .
+
+
+###  http://openuniversitydata/def#Universidad
+:Universidad rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.w3.org/ns/org#Organization> ;
+             rdfs:label "Universidad" .
+
+
+###  http://openuniversitydata/def/organizacion-y-servicios#Campus
+<http://openuniversitydata/def/organizacion-y-servicios#Campus> rdf:type owl:Class ;
+                                                                rdfs:label "Campus" .
+
+
+###  http://openuniversitydata/def/organizacion-y-servicios#Centro
+<http://openuniversitydata/def/organizacion-y-servicios#Centro> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.w3.org/ns/org#Organization> ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://openuniversitydata/def/organizacion-y-servicios#estaUbicado> ;
+                                                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                ] ;
+                                                                rdfs:label "Centro" .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> rdf:type owl:Class ;
+                                                                                   rdfs:label "Municipio" .
+
+
+###  http://www.owl-ontologies.com/geosparql#Feature
+<http://www.owl-ontologies.com/geosparql#Feature> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.owl-ontologies.com/geosparql#SpatialObject> ;
+                                                  rdfs:label "Feature" .
+
+
+###  http://www.owl-ontologies.com/geosparql#Geometry
+<http://www.owl-ontologies.com/geosparql#Geometry> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.owl-ontologies.com/geosparql#SpatialObject> ;
+                                                   rdfs:label "Geometry" .
+
+
+###  http://www.owl-ontologies.com/geosparql#Point
+<http://www.owl-ontologies.com/geosparql#Point> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.owl-ontologies.com/geosparql#Geometry> ;
+                                                rdfs:label "Point" .
+
+
+###  http://www.owl-ontologies.com/geosparql#SpatialObject
+<http://www.owl-ontologies.com/geosparql#SpatialObject> rdf:type owl:Class ;
+                                                        rdfs:label "Spatial Object" .
+
+
+###  http://www.w3.org/2001/XMLSchema#wKTLiteral
+xsd:wKTLiteral rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/org#Organization
+<http://www.w3.org/ns/org#Organization> rdf:type owl:Class ;
+                                        rdfs:label "Organization" .
+
+
+###  http://www.w3.org/ns/org#Site
+<http://www.w3.org/ns/org#Site> rdf:type owl:Class ;
+                                rdfs:subClassOf <http://www.owl-ontologies.com/geosparql#Feature> ;
+                                rdfs:label "Site" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://openuniversitydata/kos/organizacion-y-servicios/naturaleza-centro
+<http://openuniversitydata/kos/organizacion-y-servicios/naturaleza-centro> rdf:type owl:NamedIndividual .
+
+
+###  http://openuniversitydata/kos/organizacion-y-servicios/situacion-centro
+<http://openuniversitydata/kos/organizacion-y-servicios/situacion-centro> rdf:type owl:NamedIndividual .
+
+
+###  http://openuniversitydata/kos/organizacion-y-servicios/tipo-centro
+<http://openuniversitydata/kos/organizacion-y-servicios/tipo-centro> rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.owl-ontologies.com/geosparql#asWKT> rdfs:label "as w k t" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

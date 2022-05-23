@@ -1,0 +1,281 @@
+<http://openuniversitydata/def#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://openuniversitydata/def#> <http://purl.org/dc/elements/1.1/creator> "Víctor Morcuende" .
+<http://openuniversitydata/def#> <http://purl.org/dc/elements/1.1/description> "Ontology code created by Chowlk" .
+<http://openuniversitydata/def#> <http://purl.org/dc/elements/1.1/title> "Centro Ontology" .
+<http://openuniversitydata/def#> <http://www.w3.org/2002/07/owl#versionInfo> "0.0.4" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://openuniversitydata/def#tieneAsociado
+<http://openuniversitydata/def#tieneAsociado> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://openuniversitydata/def#tieneAsociado> <http://www.w3.org/2000/01/rdf-schema#domain> <http://openuniversitydata/def#Universidad> .
+<http://openuniversitydata/def#tieneAsociado> <http://www.w3.org/2000/01/rdf-schema#range> <http://openuniversitydata/def#CursoAcademico> .
+<http://openuniversitydata/def#tieneAsociado> <http://www.w3.org/2000/01/rdf-schema#label> "tiene asociado" .
+# 
+# http://openuniversitydata/def/organizacion-y-servicios#estaUbicado
+<http://openuniversitydata/def/organizacion-y-servicios#estaUbicado> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://openuniversitydata/def/organizacion-y-servicios#estaUbicado> <http://www.w3.org/2000/01/rdf-schema#domain> <http://openuniversitydata/def/organizacion-y-servicios#Centro> .
+<http://openuniversitydata/def/organizacion-y-servicios#estaUbicado> <http://www.w3.org/2000/01/rdf-schema#range> <http://openuniversitydata/def/organizacion-y-servicios#Campus> .
+<http://openuniversitydata/def/organizacion-y-servicios#estaUbicado> <http://www.w3.org/2000/01/rdf-schema#label> "esta ubicado" .
+# 
+# http://openuniversitydata/def/organizacion-y-servicios#naturalezaCentro
+<http://openuniversitydata/def/organizacion-y-servicios#naturalezaCentro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://openuniversitydata/def/organizacion-y-servicios#naturalezaCentro> <http://www.w3.org/2000/01/rdf-schema#domain> <http://openuniversitydata/def/organizacion-y-servicios#Centro> .
+<http://openuniversitydata/def/organizacion-y-servicios#naturalezaCentro> <http://www.w3.org/2000/01/rdf-schema#range> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#hasValue> <http://openuniversitydata/kos/organizacion-y-servicios/naturaleza-centro> .
+<http://openuniversitydata/kos/organizacion-y-servicios/naturaleza-centro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#inScheme> .
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://openuniversitydata/def/organizacion-y-servicios#naturalezaCentro> <http://www.w3.org/2000/01/rdf-schema#label> "naturaleza centro" .
+# 
+# http://openuniversitydata/def/organizacion-y-servicios#situacionCentro
+<http://openuniversitydata/def/organizacion-y-servicios#situacionCentro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://openuniversitydata/def/organizacion-y-servicios#situacionCentro> <http://www.w3.org/2000/01/rdf-schema#domain> <http://openuniversitydata/def/organizacion-y-servicios#Centro> .
+<http://openuniversitydata/def/organizacion-y-servicios#situacionCentro> <http://www.w3.org/2000/01/rdf-schema#range> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid5 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#hasValue> <http://openuniversitydata/kos/organizacion-y-servicios/situacion-centro> .
+<http://openuniversitydata/kos/organizacion-y-servicios/situacion-centro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#inScheme> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2004/02/skos/core#Concept> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://openuniversitydata/def/organizacion-y-servicios#situacionCentro> <http://www.w3.org/2000/01/rdf-schema#label> "situacion centro" .
+# 
+# http://openuniversitydata/def/organizacion-y-servicios#tipoCentro
+<http://openuniversitydata/def/organizacion-y-servicios#tipoCentro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://openuniversitydata/def/organizacion-y-servicios#tipoCentro> <http://www.w3.org/2000/01/rdf-schema#domain> <http://openuniversitydata/def/organizacion-y-servicios#Centro> .
+<http://openuniversitydata/def/organizacion-y-servicios#tipoCentro> <http://www.w3.org/2000/01/rdf-schema#range> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid9 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#hasValue> <http://openuniversitydata/kos/organizacion-y-servicios/tipo-centro> .
+<http://openuniversitydata/kos/organizacion-y-servicios/tipo-centro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#inScheme> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2004/02/skos/core#Concept> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://openuniversitydata/def/organizacion-y-servicios#tipoCentro> <http://www.w3.org/2000/01/rdf-schema#label> "tipo centro" .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#municipio
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#municipio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#municipio> <http://www.w3.org/2000/01/rdf-schema#domain> <http://openuniversitydata/def/organizacion-y-servicios#Campus> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#municipio> <http://www.w3.org/2000/01/rdf-schema#domain> <http://openuniversitydata/def/organizacion-y-servicios#Centro> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#municipio> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#municipio> <http://www.w3.org/2000/01/rdf-schema#label> "municipio" .
+# 
+# http://www.owl-ontologies.com/geosparql#asWKT
+<http://www.owl-ontologies.com/geosparql#asWKT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.owl-ontologies.com/geosparql#asWKT> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.owl-ontologies.com/geosparql#Geometry> .
+<http://www.owl-ontologies.com/geosparql#asWKT> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#wKTLiteral> .
+<http://www.w3.org/2001/XMLSchema#wKTLiteral> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.owl-ontologies.com/geosparql#hasGeometry
+<http://www.owl-ontologies.com/geosparql#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.owl-ontologies.com/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.owl-ontologies.com/geosparql#Geometry> .
+<http://www.owl-ontologies.com/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.owl-ontologies.com/geosparql#Feature> .
+<http://www.owl-ontologies.com/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "has geometry" .
+# 
+# http://www.w3.org/2004/02/skos/core#inScheme
+# 
+# http://www.w3.org/ns/org#hasSite
+<http://www.w3.org/ns/org#hasSite> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/org#hasSite> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/org#Organization> .
+<http://www.w3.org/ns/org#hasSite> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/org#Site> .
+<http://www.w3.org/ns/org#hasSite> <http://www.w3.org/2000/01/rdf-schema#label> "has site" .
+# 
+# http://www.w3.org/ns/org#hasSubOrganization
+<http://www.w3.org/ns/org#hasSubOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/org#hasSubOrganization> <http://www.w3.org/2000/01/rdf-schema#domain> <http://openuniversitydata/def#Universidad> .
+<http://www.w3.org/ns/org#hasSubOrganization> <http://www.w3.org/2000/01/rdf-schema#range> <http://openuniversitydata/def/organizacion-y-servicios#Centro> .
+<http://www.w3.org/ns/org#hasSubOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "has sub organization" .
+# 
+# http://www.w3.org/ns/org#subOrganizationOf
+<http://www.w3.org/ns/org#subOrganizationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/org#subOrganizationOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://openuniversitydata/def/organizacion-y-servicios#Centro> .
+<http://www.w3.org/ns/org#subOrganizationOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://openuniversitydata/def#Universidad> .
+<http://www.w3.org/ns/org#subOrganizationOf> <http://www.w3.org/2000/01/rdf-schema#label> "sub organization of" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://openuniversitydata/def/organizacion-y-servicios#fechaDesdeSituacionCentro
+<http://openuniversitydata/def/organizacion-y-servicios#fechaDesdeSituacionCentro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://openuniversitydata/def/organizacion-y-servicios#fechaDesdeSituacionCentro> <http://www.w3.org/2000/01/rdf-schema#domain> <http://openuniversitydata/def/organizacion-y-servicios#Centro> .
+<http://openuniversitydata/def/organizacion-y-servicios#fechaDesdeSituacionCentro> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://openuniversitydata/def/organizacion-y-servicios#fechaDesdeSituacionCentro> <http://www.w3.org/2000/01/rdf-schema#label> "fecha desde situacion centro" .
+# 
+# http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://openuniversitydata/def#Universidad> .
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#label> "identifier" .
+# 
+# http://www.owl-ontologies.com/geo#lat
+<http://www.owl-ontologies.com/geo#lat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.owl-ontologies.com/geo#lat> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.owl-ontologies.com/geosparql#Point> .
+<http://www.owl-ontologies.com/geo#lat> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<http://www.owl-ontologies.com/geo#lat> <http://www.w3.org/2000/01/rdf-schema#label> "lat" .
+# 
+# http://www.owl-ontologies.com/geo#long
+<http://www.owl-ontologies.com/geo#long> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.owl-ontologies.com/geo#long> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.owl-ontologies.com/geosparql#Point> .
+<http://www.owl-ontologies.com/geo#long> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<http://www.owl-ontologies.com/geo#long> <http://www.w3.org/2000/01/rdf-schema#label> "long" .
+# 
+# http://www.owl-ontologies.com/geosparql#asWKT
+<http://www.owl-ontologies.com/geosparql#asWKT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://openuniversitydata/def#CursoAcademico
+<http://openuniversitydata/def#CursoAcademico> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://openuniversitydata/def#CursoAcademico> <http://www.w3.org/2000/01/rdf-schema#label> "Curso Academico" .
+# 
+# http://openuniversitydata/def#Universidad
+<http://openuniversitydata/def#Universidad> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://openuniversitydata/def#Universidad> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/org#Organization> .
+<http://openuniversitydata/def#Universidad> <http://www.w3.org/2000/01/rdf-schema#label> "Universidad" .
+# 
+# http://openuniversitydata/def/organizacion-y-servicios#Campus
+<http://openuniversitydata/def/organizacion-y-servicios#Campus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://openuniversitydata/def/organizacion-y-servicios#Campus> <http://www.w3.org/2000/01/rdf-schema#label> "Campus" .
+# 
+# http://openuniversitydata/def/organizacion-y-servicios#Centro
+<http://openuniversitydata/def/organizacion-y-servicios#Centro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://openuniversitydata/def/organizacion-y-servicios#Centro> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/org#Organization> .
+<http://openuniversitydata/def/organizacion-y-servicios#Centro> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://openuniversitydata/def/organizacion-y-servicios#estaUbicado> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://openuniversitydata/def/organizacion-y-servicios#Centro> <http://www.w3.org/2000/01/rdf-schema#label> "Centro" .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> <http://www.w3.org/2000/01/rdf-schema#label> "Municipio" .
+# 
+# http://www.owl-ontologies.com/geosparql#Feature
+<http://www.owl-ontologies.com/geosparql#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.owl-ontologies.com/geosparql#Feature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.owl-ontologies.com/geosparql#SpatialObject> .
+<http://www.owl-ontologies.com/geosparql#Feature> <http://www.w3.org/2000/01/rdf-schema#label> "Feature" .
+# 
+# http://www.owl-ontologies.com/geosparql#Geometry
+<http://www.owl-ontologies.com/geosparql#Geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.owl-ontologies.com/geosparql#Geometry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.owl-ontologies.com/geosparql#SpatialObject> .
+<http://www.owl-ontologies.com/geosparql#Geometry> <http://www.w3.org/2000/01/rdf-schema#label> "Geometry" .
+# 
+# http://www.owl-ontologies.com/geosparql#Point
+<http://www.owl-ontologies.com/geosparql#Point> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.owl-ontologies.com/geosparql#Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.owl-ontologies.com/geosparql#Geometry> .
+<http://www.owl-ontologies.com/geosparql#Point> <http://www.w3.org/2000/01/rdf-schema#label> "Point" .
+# 
+# http://www.owl-ontologies.com/geosparql#SpatialObject
+<http://www.owl-ontologies.com/geosparql#SpatialObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.owl-ontologies.com/geosparql#SpatialObject> <http://www.w3.org/2000/01/rdf-schema#label> "Spatial Object" .
+# 
+# http://www.w3.org/2001/XMLSchema#wKTLiteral
+# 
+# http://www.w3.org/2004/02/skos/core#Concept
+# 
+# http://www.w3.org/ns/org#Organization
+<http://www.w3.org/ns/org#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/org#Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organization" .
+# 
+# http://www.w3.org/ns/org#Site
+<http://www.w3.org/ns/org#Site> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/org#Site> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.owl-ontologies.com/geosparql#Feature> .
+<http://www.w3.org/ns/org#Site> <http://www.w3.org/2000/01/rdf-schema#label> "Site" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://openuniversitydata/kos/organizacion-y-servicios/naturaleza-centro
+# 
+# http://openuniversitydata/kos/organizacion-y-servicios/situacion-centro
+# 
+# http://openuniversitydata/kos/organizacion-y-servicios/tipo-centro
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://www.owl-ontologies.com/geosparql#asWKT> <http://www.w3.org/2000/01/rdf-schema#label> "as w k t" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
