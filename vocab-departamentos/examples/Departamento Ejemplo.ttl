@@ -16,7 +16,7 @@
     orgser:situacionDepartamento <http://openuniversitydata/kos/organizacion-y-servicios/situacion-departamento/activo> ;
     esadm:municipio <http://www.example.org/openuniversitydata/municipio/Boadilla-del-Monte> ;
     orgser:estaUbicado <http://www.example.org/openuniversitydata/campus/Campus-de-Montegancedo> ;
-    org:hasSite <http://www.example.org/openuniversitydata/point/-3.83561;40.40575> ;
+    org:hasSite <http://www.example.org/openuniversitydata/departamento/Departamento-de-Inteligencia-Artificial/site> ;
     org:subOrganizationOf <http://www.example.org/openuniversitydata/universidad/UPM> .
     
 <http://www.example.org/openuniversitydata/universidad/UPM> a univ:Universidad ;
@@ -33,7 +33,10 @@
     dct:identifier "02214" ;
     esadm:municipio <http://www.example.org/openuniversitydata/municipio/Boadilla-del-Monte> .
 
-<http://www.example.org/openuniversitydata/point/-3.83561;40.40575> a geosparql:Point ;
+<http://www.example.org/openuniversitydata/departamento/Departamento-de-Inteligencia-Artificial/site> a geosparql:Feature ;
+    geosparql:hasGeometry <http://www.example.org/openuniversitydata/departamento/Departamento-de-Inteligencia-Artificial/site/geometry> .
+
+<http://www.example.org/openuniversitydata/departamento/Departamento-de-Inteligencia-Artificial/site/geometry> a geosparql:Point ;
     geo:long "-3.83561"^^xsd:double ;
     geo:lat "40.40575"^^xsd:double ;
     geosparql:asWKT "POINT (-3.83561 40.40575)"^^geosparql:wktLiteral .
