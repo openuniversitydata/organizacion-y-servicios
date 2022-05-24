@@ -1,5 +1,5 @@
 # Vocabulario de centros universitarios
-Este vocabulario trata sobre los centros universitarios de algunas universidades públicas españolas. En este directorio se pueden encontrar 5 secciones
+Este vocabulario trata sobre los centros universitarios de algunas universidades públicas españolas. En este directorio se pueden encontrar 5 secciones:
 
 ### 1. Documentación de la ontología
 Aquí se puede visualizar toda la documentación de la ontología de Centros generada con la ayuda del programa Widoco a partir del OWL de la ontología
