@@ -41,9 +41,7 @@ owl:versionInfo a owl:AnnotationProperty ;
                 owl:versionInfo "0.0.4" .
 
 
-#################################################################
-#    Object properties
-#################################################################
+
 
 univ:tieneAsociado a owl:ObjectProperty ;
     rdfs:label "tiene asociado" ;
